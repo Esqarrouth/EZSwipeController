@@ -1,5 +1,7 @@
 # EZSwipeController
 
+[![Cocoapods Compatible](https://img.shields.io/cocoapods/v/EZSwipeController.svg)](https://img.shields.io/cocoapods/v/EZSwipeController.svg)  
+
 Easy to use UIPageViewController to create a view navigation like Snapchat/Tinder/iOS Main Pages.
 
 ![Demo](Examplepics/demo.gif)
