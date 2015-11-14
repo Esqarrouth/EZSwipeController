@@ -2,7 +2,7 @@
 
 Easy to use UIPageViewController to create a view navigation like Snapchat/Tinder/iOS Main Pages.
 
-![Demo](examplepics/demo.gif)
+![Demo](Examplepics/demo.gif)
 
 ##Manual Install (~10 seconds)
 
@@ -30,7 +30,7 @@ If you want to use EZSwipe as root viewcontroller (Your apps starting point):
 
 Go to Targets -> Your Target -> General -> Main Interface -> Delete it
 
-![Demo](examplepics/mainint.png)
+![Demo](Examplepics/mainint.png)
 
 Add this to your AppDelegate: 
 
@@ -79,7 +79,7 @@ extension MySwipeVC: EZSwipeControllerDataSource {
 ```
 You should have something like this:
 
-<img src="examplepics/first_run.gif" width="200">
+<img src="Examplepics/first_run.gif" width="200">
 
 ####Change Background Color
 
@@ -92,7 +92,7 @@ class MySwipeVC: EZSwipeController {
 }
 ```
 
-<img src="examplepics/background_color.gif" width="200">
+<img src="Examplepics/background_color.gif" width="200">
 
 ####Gives Titles To Pages
 
@@ -104,7 +104,7 @@ extension MySwipeVC: EZSwipeControllerDataSource {
 }
 ```
 
-<img src="examplepics/navbar_titles.gif" width="200">
+<img src="Examplepics/navbar_titles.gif" width="200">
 
 ####Starting Page Index
 
@@ -171,7 +171,7 @@ extension MySwipeVC: EZSwipeControllerDataSource {
 ```
 You don't need to set actions to buttons, EZSwipeController automatically overrides them and makes them work.
 
-<img src="examplepics/navbar_custom.gif" width="200">
+<img src="Examplepics/navbar_custom.gif" width="200">
 
 ####Add Images To Navigation Bar
 
@@ -241,7 +241,7 @@ private func scaleTo(image image: UIImage, w: CGFloat, h: CGFloat) -> UIImage {
 }
 ```
 
-<img src="examplepics/navbar_image.gif" width="200">
+<img src="Examplepics/navbar_image.gif" width="200">
 
 ####Custom Button Settings
 
@@ -265,7 +265,7 @@ extension MySwipeVC: EZSwipeControllerDataSource {
 ```
 You can also add your analytics and other stuff in here. 
 
-<img src="examplepics/navbar_custom_button.gif" width="200">
+<img src="Examplepics/navbar_custom_button.gif" width="200">
 
 ####Move Navigation Bar to Bottom
 
@@ -278,7 +278,7 @@ class MySwipeVC: EZSwipeController {
 }
 ```
 
-<img src="examplepics/navbar_bottom.gif" width="200">
+<img src="Examplepics/navbar_bottom.gif" width="200">
   
 
 ##Requirements
