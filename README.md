@@ -261,7 +261,7 @@ extension MySwipeVC: EZSwipeControllerDataSource {
     
     func clickedLeftButtonFromPageIndex(index: Int) {
         if index == 1 {
-            alert(title: "What!?!", message: "Squirtle is evolving", action: "Awesome!")
+            print("What!?! Squirtle is evolving!!")
         }
     }
 }
