@@ -16,7 +16,7 @@ class MySwipeVC: EZSwipeController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.yellowColor()
+        view.backgroundColor = UIColor(red: 231/255, green: 231/255, blue: 231/255, alpha: 1)
     }
 }
 
@@ -53,7 +53,7 @@ extension MySwipeVC: EZSwipeControllerDataSource {
 
         let navigationBar = UINavigationBar()
         navigationBar.barStyle = UIBarStyle.Default
-//        navigationBar.barTintColor = UIColor.purpleColor()
+        navigationBar.barTintColor = UIColor(red: 231/255, green: 231/255, blue: 231/255, alpha: 1)
         navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.blackColor()]
         
         let navigationItem = UINavigationItem(title: title)
