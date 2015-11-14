@@ -27,6 +27,14 @@ import EZSwipeController
 
 ##Setup
 
+####Use Normally
+
+Instead, you can also use EZSwipeController via push or present like: 
+
+``` swift
+presentViewController(EZSwipeController(), animated: true, completion: nil)
+```
+
 ####Use as RootViewController
 If you want to use EZSwipe as root viewcontroller (Your apps starting point):
 
@@ -43,13 +51,6 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
     window!.makeKeyAndVisible()
     return true
 }
-```
-####Use Normally
-
-Instead, you can also use EZSwipeController via push or present like: 
-
-``` swift
-presentViewController(EZSwipeController(), animated: true, completion: nil)
 ```
 
 ####Create a subclass of EZSwipeController
