@@ -7,7 +7,7 @@
 //
 import UIKit
 
-@objc protocol EZSwipeControllerDataSource {
+@objc public protocol EZSwipeControllerDataSource {
     func viewControllerData() -> [UIViewController]
     optional func indexOfStartingPage() -> Int // Defaults is 0
     optional func titlesForPages() -> [String]
@@ -18,20 +18,15 @@ import UIKit
     optional func clickedRightButtonFromPageIndex(index: Int)
 }
 
-//TODO: change navigation bar color when its only with title
-//TODO: automatically resize sub uivcs so they are sized according to screen
-//http://stackoverflow.com/questions/5761183/change-position-of-uibarbuttonitem-in-uinavigationbar
-//http://stackoverflow.com/questions/16742327/uibarbuttons-too-close-to-the-edges-of-uinavigationbar-inside-uipopovercontrolle
-
-class EZSwipeController: UIViewController {
+public class EZSwipeController: UIViewController {
     
-    struct Constants {
-        static var Orientation: UIInterfaceOrientation {
+    public struct Constants {
+        public static var Orientation: UIInterfaceOrientation {
             get {
                 return UIApplication.sharedApplication().statusBarOrientation
             }
         }
-        static var ScreenWidth: CGFloat {
+        public static var ScreenWidth: CGFloat {
             get {
                 if UIInterfaceOrientationIsPortrait(Orientation) {
                     return UIScreen.mainScreen().bounds.size.width
@@ -40,7 +35,7 @@ class EZSwipeController: UIViewController {
                 }
             }
         }
-        static var ScreenHeight: CGFloat {
+        public static var ScreenHeight: CGFloat {
             get {
                 if UIInterfaceOrientationIsPortrait(Orientation) {
                     return UIScreen.mainScreen().bounds.size.height
@@ -49,12 +44,12 @@ class EZSwipeController: UIViewController {
                 }
             }
         }
-        static var StatusBarHeight: CGFloat {
+        public static var StatusBarHeight: CGFloat {
             get {
                 return UIApplication.sharedApplication().statusBarFrame.height
             }
         }
-        static var ScreenHeightWithoutStatusBar: CGFloat {
+        public static var ScreenHeightWithoutStatusBar: CGFloat {
             get {
                 if UIInterfaceOrientationIsPortrait(Orientation) {
                     return UIScreen.mainScreen().bounds.size.height - StatusBarHeight
@@ -63,29 +58,29 @@ class EZSwipeController: UIViewController {
                 }
             }
         }
-        static let navigationBarHeight: CGFloat = 44
-        static let lightGrayColor = UIColor(red: 248, green: 248, blue: 248, alpha: 1)
+        public static let navigationBarHeight: CGFloat = 44
+        public static let lightGrayColor = UIColor(red: 248, green: 248, blue: 248, alpha: 1)
     }
     
-    var stackNavBars = [UINavigationBar]()
-    var stackVC: [UIViewController]!
-    var stackPageVC: [UIViewController]!
-    var stackStartLocation: Int!
+    public var stackNavBars = [UINavigationBar]()
+    public var stackVC: [UIViewController]!
+    public var stackPageVC: [UIViewController]!
+    public var stackStartLocation: Int!
     
-    var bottomNavigationHeight: CGFloat = 44
-    var pageViewController: UIPageViewController!
-    var titleButton: UIButton?
-    var currentStackVC: UIViewController!
-    var datasource: EZSwipeControllerDataSource?
+    public var bottomNavigationHeight: CGFloat = 44
+    public var pageViewController: UIPageViewController!
+    public var titleButton: UIButton?
+    public var currentStackVC: UIViewController!
+    public var datasource: EZSwipeControllerDataSource?
     
-    var navigationBarShouldBeOnBottom = false
+    public var navigationBarShouldBeOnBottom = false
     
-    init() {
+    public init() {
         super.init(nibName: nil, bundle: nil)
         setupView()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -172,11 +167,11 @@ class EZSwipeController: UIViewController {
         pageViewController.didMoveToParentViewController(self)
     }
     
-    func setupView() {
+    public func setupView() {
         
     }
     
-    override func loadView() {
+    override public func loadView() {
         super.loadView()
         stackVC = datasource?.viewControllerData()
         stackStartLocation = datasource?.indexOfStartingPage?() ?? 0
@@ -189,7 +184,7 @@ class EZSwipeController: UIViewController {
         setupPageViewController()
     }
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
     }
     
@@ -229,14 +224,14 @@ class EZSwipeController: UIViewController {
 
 extension EZSwipeController: UIPageViewControllerDataSource {
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+    public func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         if viewController == stackPageVC.first {
             return nil
         }
         return stackPageVC[stackPageVC.indexOf(viewController)! - 1]
     }
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+    public func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         if viewController == stackPageVC.last {
             return nil
         }
@@ -247,7 +242,7 @@ extension EZSwipeController: UIPageViewControllerDataSource {
 
 extension EZSwipeController: UIPageViewControllerDelegate {
     
-    func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+    public func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if !completed {
             return
         }
