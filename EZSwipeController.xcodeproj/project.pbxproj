@@ -12,7 +12,7 @@
 		E11440B61BF691CC000DDE45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E11440B51BF691CC000DDE45 /* Assets.xcassets */; };
 		E11440B91BF691CC000DDE45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E11440B71BF691CC000DDE45 /* LaunchScreen.storyboard */; };
 		E11440C41BF691CC000DDE45 /* EZSwipeControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11440C31BF691CC000DDE45 /* EZSwipeControllerUITests.swift */; };
-		E19373951BF69C56003F1D99 /* EZSwipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19373941BF69C56003F1D99 /* EZSwipeController.swift */; settings = {ASSET_TAGS = (); }; };
+		E17A9D3E1BF7BB7200E52843 /* EZSwipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A9D3D1BF7BB7200E52843 /* EZSwipeController.swift */; settings = {ASSET_TAGS = (); }; };
 		E19373971BF69D73003F1D99 /* MySwipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19373961BF69D73003F1D99 /* MySwipeVC.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -36,7 +36,7 @@
 		E11440BF1BF691CC000DDE45 /* EZSwipeControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EZSwipeControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E11440C31BF691CC000DDE45 /* EZSwipeControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EZSwipeControllerUITests.swift; sourceTree = "<group>"; };
 		E11440C51BF691CC000DDE45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E19373941BF69C56003F1D99 /* EZSwipeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EZSwipeController.swift; sourceTree = "<group>"; };
+		E17A9D3D1BF7BB7200E52843 /* EZSwipeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EZSwipeController.swift; sourceTree = SOURCE_ROOT; };
 		E19373961BF69D73003F1D99 /* MySwipeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySwipeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,7 +81,7 @@
 			children = (
 				E11440AE1BF691CC000DDE45 /* AppDelegate.swift */,
 				E19373961BF69D73003F1D99 /* MySwipeVC.swift */,
-				E19373941BF69C56003F1D99 /* EZSwipeController.swift */,
+				E17A9D3D1BF7BB7200E52843 /* EZSwipeController.swift */,
 				E11440B01BF691CC000DDE45 /* ViewController.swift */,
 				E11440B51BF691CC000DDE45 /* Assets.xcassets */,
 				E11440B71BF691CC000DDE45 /* LaunchScreen.storyboard */,
@@ -198,8 +198,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E19373951BF69C56003F1D99 /* EZSwipeController.swift in Sources */,
 				E11440B11BF691CC000DDE45 /* ViewController.swift in Sources */,
+				E17A9D3E1BF7BB7200E52843 /* EZSwipeController.swift in Sources */,
 				E19373971BF69D73003F1D99 /* MySwipeVC.swift in Sources */,
 				E11440AF1BF691CC000DDE45 /* AppDelegate.swift in Sources */,
 			);
