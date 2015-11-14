@@ -40,7 +40,7 @@ If you want to use EZSwipe as root viewcontroller (Your apps starting point):
 
 Go to Targets -> Your Target -> General -> Main Interface -> Delete it
 
-![Demo](Examplepics/mainint.png)
+<img src="Examplepics/mainint.png" width="400">
 
 Add this to your AppDelegate: 
 
