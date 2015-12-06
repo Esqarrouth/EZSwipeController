@@ -12,6 +12,7 @@ class MySwipeVC: EZSwipeController {
     override func setupView() {
         datasource = self
 //        navigationBarShouldBeOnBottom = true
+//        navigationBarShouldNotExist = true
     }
     
     override func viewDidLoad() {

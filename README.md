@@ -274,6 +274,7 @@ You can also add your analytics and other stuff in here.
 ``` swift
 class MySwipeVC: EZSwipeController {
     override func setupView() {
+        super.setupView()
         datasource = self
         navigationBarShouldBeOnBottom = true
     }
@@ -281,7 +282,20 @@ class MySwipeVC: EZSwipeController {
 ```
 
 <img src="Examplepics/navbar_bottom.gif" width="200">
-  
+
+####Hide Navigation Bar
+
+``` swift
+class MySwipeVC: EZSwipeController {
+    override func setupView() {
+        super.setupView()
+        navigationBarShouldNotExist = true
+    }
+}
+```
+
+<img src="Examplepics/no_navbar.gif" width="200">
+
 
 ##Requirements
 

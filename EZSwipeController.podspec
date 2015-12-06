@@ -1,6 +1,6 @@
  Pod::Spec.new do |s|
   s.name             = "EZSwipeController"
-  s.version          = "0.2"
+  s.version          = "0.3"
   s.summary          = "UIPageViewController like Snapchat/Tinder/iOS Main Pages"
   s.description      = "Easy to use UIPageViewController to create a view navigation like Snapchat/Tinder/iOS Main Pages."
   s.homepage         = "https://github.com/goktugyil/EZSwipeController"
