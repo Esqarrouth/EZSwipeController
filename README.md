@@ -27,12 +27,20 @@ import EZSwipeController
 
 ##Setup
 
+####Use Normally
+
+Instead, you can also use EZSwipeController via push or present like: 
+
+``` swift
+presentViewController(EZSwipeController(), animated: true, completion: nil)
+```
+
 ####Use as RootViewController
 If you want to use EZSwipe as root viewcontroller (Your apps starting point):
 
 Go to Targets -> Your Target -> General -> Main Interface -> Delete it
 
-![Demo](Examplepics/mainint.png)
+<img src="Examplepics/mainint.png" width="400">
 
 Add this to your AppDelegate: 
 
@@ -43,13 +51,6 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
     window!.makeKeyAndVisible()
     return true
 }
-```
-####Use Normally
-
-Instead, you can also use EZSwipeController via push or present like: 
-
-``` swift
-presentViewController(EZSwipeController(), animated: true, completion: nil)
 ```
 
 ####Create a subclass of EZSwipeController
@@ -260,7 +261,7 @@ extension MySwipeVC: EZSwipeControllerDataSource {
     
     func clickedLeftButtonFromPageIndex(index: Int) {
         if index == 1 {
-            alert(title: "What!?!", message: "Squirtle is evolving", action: "Awesome!")
+            print("What!?! Squirtle is evolving!!")
         }
     }
 }
