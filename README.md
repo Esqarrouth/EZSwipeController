@@ -29,7 +29,7 @@ import EZSwipeController
 
 ####Use Normally
 
-Instead, you can also use EZSwipeController via push or present like: 
+You can also use EZSwipeController via push or present on your UIViewcontrollers like: 
 
 ``` swift
 presentViewController(EZSwipeController(), animated: true, completion: nil)
