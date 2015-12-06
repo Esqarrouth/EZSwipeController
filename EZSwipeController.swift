@@ -74,6 +74,7 @@ public class EZSwipeController: UIViewController {
     public var datasource: EZSwipeControllerDataSource?
     
     public var navigationBarShouldBeOnBottom = false
+    public var navigationBarShouldNotExist = false
     
     public init() {
         super.init(nibName: nil, bundle: nil)
@@ -85,6 +86,10 @@ public class EZSwipeController: UIViewController {
     }
     
     private func setupDefaultNavigationBars(pageTitles: [String]) {
+        guard navigationBarShouldNotExist == false else {
+            return
+        }
+        
         var navBars = [UINavigationBar]()
         for index in 0..<pageTitles.count {
             let navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: Constants.ScreenWidth, height: Constants.navigationBarHeight))
@@ -104,6 +109,9 @@ public class EZSwipeController: UIViewController {
     
     private func setupNavigationBar() {
         guard stackNavBars.isEmpty else {
+            return
+        }
+        guard navigationBarShouldNotExist == false else {
             return
         }
         guard let _ = datasource?.navigationBarDataForPageIndex?(0) else {
@@ -142,7 +150,9 @@ public class EZSwipeController: UIViewController {
         for index in 0..<stackVC.count {
             let pageVC = UIViewController()
             if !navigationBarShouldBeOnBottom {
-                stackVC[index].view.frame.origin.y += Constants.navigationBarHeight
+                if !navigationBarShouldNotExist {
+                    stackVC[index].view.frame.origin.y += Constants.navigationBarHeight
+                }
             }
             pageVC.addChildViewController(stackVC[index])
             pageVC.view.addSubview(stackVC[index].view)
@@ -160,7 +170,16 @@ public class EZSwipeController: UIViewController {
         pageViewController.dataSource = self
         pageViewController.delegate = self
         pageViewController.setViewControllers([stackPageVC[stackStartLocation]], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
-        pageViewController.view.frame = CGRect(x: 0, y: Constants.StatusBarHeight, width: Constants.ScreenWidth, height: Constants.ScreenHeightWithoutStatusBar)
+        var pageViewControllerY: CGFloat = 0
+        var pageViewControllerH: CGFloat = 0
+        if navigationBarShouldNotExist {
+            pageViewControllerY = 0
+            pageViewControllerH = Constants.ScreenHeight
+        } else {
+            pageViewControllerY = Constants.StatusBarHeight
+            pageViewControllerH = Constants.ScreenHeightWithoutStatusBar
+        }
+        pageViewController.view.frame = CGRect(x: 0, y: pageViewControllerY, width: Constants.ScreenWidth, height: pageViewControllerH)
         pageViewController.view.backgroundColor = UIColor.clearColor()
         addChildViewController(pageViewController)
         view.addSubview(pageViewController.view)
