@@ -297,6 +297,20 @@ class MySwipeVC: EZSwipeController {
 
 <img src="Examplepics/no_navbar.gif" width="200">
 
+####Extra Settings
+
+``` swift
+override func setupView() {
+    cancelStandardButtonEvents()
+    // Use this setting if you are using custom button that  
+    // has nothing to do with swiping the viewcontroller
+}
+```
+
+``` swift
+self.currentVCIndex 
+//Use this to get the current page index
+```
 
 ##Requirements
 

@@ -19,7 +19,7 @@ import UIKit
 }
 
 public class EZSwipeController: UIViewController {
-    
+
     public struct Constants {
         public static var Orientation: UIInterfaceOrientation {
             get {
@@ -61,52 +61,59 @@ public class EZSwipeController: UIViewController {
         public static let navigationBarHeight: CGFloat = 44
         public static let lightGrayColor = UIColor(red: 248, green: 248, blue: 248, alpha: 1)
     }
-    
+
     public var stackNavBars = [UINavigationBar]()
     public var stackVC: [UIViewController]!
     public var stackPageVC: [UIViewController]!
     public var stackStartLocation: Int!
-    
+
     public var bottomNavigationHeight: CGFloat = 44
     public var pageViewController: UIPageViewController!
     public var titleButton: UIButton?
     public var currentStackVC: UIViewController!
+    public var currentVCIndex: Int {
+        get {
+            return stackPageVC.indexOf(currentStackVC)!
+        }
+    }
     public var datasource: EZSwipeControllerDataSource?
-    
+
     public var navigationBarShouldBeOnBottom = false
     public var navigationBarShouldNotExist = false
-    
+    public var cancelStandardButtonEvents = false
+
     public init() {
         super.init(nibName: nil, bundle: nil)
         setupView()
     }
-    
+
     public required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        setupView()
     }
-    
+
     private func setupDefaultNavigationBars(pageTitles: [String]) {
         guard navigationBarShouldNotExist == false else {
             return
         }
-        
+
         var navBars = [UINavigationBar]()
         for index in 0..<pageTitles.count {
             let navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: Constants.ScreenWidth, height: Constants.navigationBarHeight))
             navigationBar.barStyle = UIBarStyle.Default
             navigationBar.barTintColor = Constants.lightGrayColor
-            
+
             let navigationItem = UINavigationItem(title: pageTitles[index])
             navigationItem.hidesBackButton = true
             navigationItem.leftBarButtonItem = nil
             navigationItem.rightBarButtonItem = nil
-            
+
             navigationBar.pushNavigationItem(navigationItem, animated: false)
             navBars.append(navigationBar)
         }
         stackNavBars = navBars
     }
-    
+
     private func setupNavigationBar() {
         guard stackNavBars.isEmpty else {
             return
@@ -120,31 +127,34 @@ public class EZSwipeController: UIViewController {
             }
             return
         }
-        
+
         for index in 0..<stackVC.count {
             let navigationBar = datasource?.navigationBarDataForPageIndex?(index)
-            
+
             if let nav = navigationBar {
                 if navigationBarShouldBeOnBottom {
                     nav.frame = CGRect(x: 0, y: Constants.ScreenHeightWithoutStatusBar - Constants.navigationBarHeight, width: Constants.ScreenWidth, height: Constants.navigationBarHeight)
                 } else {
                     nav.frame = CGRect(x: 0, y: 0, width: Constants.ScreenWidth, height: Constants.navigationBarHeight)
                 }
-                for item in nav.items! {
-                    if let leftButton = item.leftBarButtonItem {
-                        leftButton.target = self
-                        leftButton.action = "clickedLeftButton"
-                    }
-                    if let rightButton = item.rightBarButtonItem {
-                        rightButton.target = self
-                        rightButton.action = "clickedRightButton"
+
+                if cancelStandardButtonEvents == false {
+                    for item in nav.items! {
+                        if let leftButton = item.leftBarButtonItem {
+                            leftButton.target = self
+                            leftButton.action = "clickedLeftButton"
+                        }
+                        if let rightButton = item.rightBarButtonItem {
+                            rightButton.target = self
+                            rightButton.action = "clickedRightButton"
+                        }
                     }
                 }
                 stackNavBars.append(navigationBar!)
             }
         }
     }
-    
+
     private func setupViewControllers() {
         stackPageVC = [UIViewController]()
         for index in 0..<stackVC.count {
@@ -164,7 +174,7 @@ public class EZSwipeController: UIViewController {
         }
         currentStackVC = stackPageVC[stackStartLocation]
     }
-    
+
     private func setupPageViewController() {
         pageViewController = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.Scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.Horizontal, options: nil)
         pageViewController.dataSource = self
@@ -185,11 +195,11 @@ public class EZSwipeController: UIViewController {
         view.addSubview(pageViewController.view)
         pageViewController.didMoveToParentViewController(self)
     }
-    
+
     public func setupView() {
-        
+
     }
-    
+
     override public func loadView() {
         super.loadView()
         stackVC = datasource?.viewControllerData()
@@ -202,71 +212,71 @@ public class EZSwipeController: UIViewController {
         setupViewControllers()
         setupPageViewController()
     }
-    
+
     override public func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     @objc private func clickedLeftButton() {
         let currentIndex = stackPageVC.indexOf(currentStackVC)!
         datasource?.clickedLeftButtonFromPageIndex?(currentIndex)
-        
+
         let shouldDisableSwipe = datasource?.disableSwipingForLeftButtonAtPageIndex?(currentIndex) ?? false
         if shouldDisableSwipe {
             return
         }
-        
+
         if currentStackVC == stackPageVC.first {
             return
         }
         currentStackVC = stackPageVC[currentIndex - 1]
         pageViewController.setViewControllers([currentStackVC], direction: UIPageViewControllerNavigationDirection.Reverse, animated: true, completion: nil)
     }
-    
+
     @objc private func clickedRightButton() {
         let currentIndex = stackPageVC.indexOf(currentStackVC)!
         datasource?.clickedRightButtonFromPageIndex?(currentIndex)
-        
+
         let shouldDisableSwipe = datasource?.disableSwipingForRightButtonAtPageIndex?(currentIndex) ?? false
         if shouldDisableSwipe {
             return
         }
-        
+
         if currentStackVC == stackPageVC.last {
             return
         }
         currentStackVC = stackPageVC[currentIndex + 1]
         pageViewController.setViewControllers([currentStackVC], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
     }
-    
+
 }
 
 extension EZSwipeController: UIPageViewControllerDataSource {
-    
+
     public func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         if viewController == stackPageVC.first {
             return nil
         }
         return stackPageVC[stackPageVC.indexOf(viewController)! - 1]
     }
-    
+
     public func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         if viewController == stackPageVC.last {
             return nil
         }
         return stackPageVC[stackPageVC.indexOf(viewController)! + 1]
     }
-    
+
 }
 
 extension EZSwipeController: UIPageViewControllerDelegate {
-    
+
     public func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if !completed {
             return
         }
         currentStackVC = stackPageVC[stackPageVC.indexOf(pageViewController.viewControllers!.first!)!]
     }
-    
+
 }
 
