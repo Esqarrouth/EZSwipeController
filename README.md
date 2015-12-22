@@ -27,7 +27,7 @@ import EZSwipeController
 
 ##Setup
 
-####Use Normally
+####Use with Storyboard
 
 You can also use EZSwipeController via push or present on your UIViewcontrollers like: 
 
@@ -35,7 +35,7 @@ You can also use EZSwipeController via push or present on your UIViewcontrollers
 presentViewController(EZSwipeController(), animated: true, completion: nil)
 ```
 
-####Use as RootViewController
+####Use without Storyboard
 If you want to use EZSwipe as root viewcontroller (Your apps starting point):
 
 Go to Targets -> Your Target -> General -> Main Interface -> Delete it
@@ -52,6 +52,8 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
     return true
 }
 ```
+
+##Usage
 
 ####Create a subclass of EZSwipeController
 
