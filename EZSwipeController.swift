@@ -128,11 +128,11 @@ public class EZSwipeController: UIViewController {
                     items.forEach { item in
                         if let leftButton = item.leftBarButtonItem {
                             leftButton.target = self
-                            leftButton.action = #selector(clickedLeftButton)
+                            leftButton.action = #selector(leftButtonAction)
                         }
                         if let rightButton = item.rightBarButtonItem {
                             rightButton.target = self
-                            rightButton.action = #selector(clickedRightButton)
+                            rightButton.action = #selector(rightButtonAction)
                         }
                     }
                 }
@@ -202,7 +202,7 @@ public class EZSwipeController: UIViewController {
         super.viewDidLoad()
     }
 
-    @objc private func clickedLeftButton() {
+    @objc public func leftButtonAction() {
         let currentIndex = stackPageVC.indexOf(currentStackVC)!
         datasource?.clickedLeftButtonFromPageIndex?(currentIndex)
 
@@ -218,7 +218,7 @@ public class EZSwipeController: UIViewController {
         pageViewController.setViewControllers([currentStackVC], direction: UIPageViewControllerNavigationDirection.Reverse, animated: true, completion: nil)
     }
 
-    @objc private func clickedRightButton() {
+    @objc public func rightButtonAction() {
         let currentIndex = stackPageVC.indexOf(currentStackVC)!
         datasource?.clickedRightButtonFromPageIndex?(currentIndex)
 
