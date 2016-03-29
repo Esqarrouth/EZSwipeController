@@ -28,10 +28,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		ABC17FA41CAA448E00141D78 /* EZSwipeControllerFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EZSwipeControllerFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABC17FA41CAA448E00141D78 /* EZSwipeController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EZSwipeController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABC17FA81CAA448E00141D78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABC17FB11CAA4A2800141D78 /* EZSwipeControllerFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZSwipeControllerFramework.h; sourceTree = "<group>"; };
-		E11440AB1BF691CC000DDE45 /* EZSwipeController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EZSwipeController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E11440AB1BF691CC000DDE45 /* EZSwipeControllerSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EZSwipeControllerSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E11440AE1BF691CC000DDE45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E11440B01BF691CC000DDE45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E11440B51BF691CC000DDE45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,9 +91,9 @@
 		E11440AC1BF691CC000DDE45 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E11440AB1BF691CC000DDE45 /* EZSwipeController.app */,
+				E11440AB1BF691CC000DDE45 /* EZSwipeControllerSample.app */,
 				E11440BF1BF691CC000DDE45 /* EZSwipeControllerUITests.xctest */,
-				ABC17FA41CAA448E00141D78 /* EZSwipeControllerFramework.framework */,
+				ABC17FA41CAA448E00141D78 /* EZSwipeController.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -135,9 +135,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		ABC17FA31CAA448E00141D78 /* EZSwipeControllerFramework */ = {
+		ABC17FA31CAA448E00141D78 /* EZSwipeController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ABC17FAF1CAA448E00141D78 /* Build configuration list for PBXNativeTarget "EZSwipeControllerFramework" */;
+			buildConfigurationList = ABC17FAF1CAA448E00141D78 /* Build configuration list for PBXNativeTarget "EZSwipeController" */;
 			buildPhases = (
 				ABC17F9F1CAA448E00141D78 /* Sources */,
 				ABC17FA01CAA448E00141D78 /* Frameworks */,
@@ -148,14 +148,14 @@
 			);
 			dependencies = (
 			);
-			name = EZSwipeControllerFramework;
+			name = EZSwipeController;
 			productName = "Carthage Framework";
-			productReference = ABC17FA41CAA448E00141D78 /* EZSwipeControllerFramework.framework */;
+			productReference = ABC17FA41CAA448E00141D78 /* EZSwipeController.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		E11440AA1BF691CC000DDE45 /* EZSwipeController */ = {
+		E11440AA1BF691CC000DDE45 /* EZSwipeControllerSample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E11440C81BF691CC000DDE45 /* Build configuration list for PBXNativeTarget "EZSwipeController" */;
+			buildConfigurationList = E11440C81BF691CC000DDE45 /* Build configuration list for PBXNativeTarget "EZSwipeControllerSample" */;
 			buildPhases = (
 				E11440A71BF691CC000DDE45 /* Sources */,
 				E11440A81BF691CC000DDE45 /* Frameworks */,
@@ -165,9 +165,9 @@
 			);
 			dependencies = (
 			);
-			name = EZSwipeController;
+			name = EZSwipeControllerSample;
 			productName = EZSwipeController;
-			productReference = E11440AB1BF691CC000DDE45 /* EZSwipeController.app */;
+			productReference = E11440AB1BF691CC000DDE45 /* EZSwipeControllerSample.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E11440BE1BF691CC000DDE45 /* EZSwipeControllerUITests */ = {
@@ -222,9 +222,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E11440AA1BF691CC000DDE45 /* EZSwipeController */,
+				E11440AA1BF691CC000DDE45 /* EZSwipeControllerSample */,
 				E11440BE1BF691CC000DDE45 /* EZSwipeControllerUITests */,
-				ABC17FA31CAA448E00141D78 /* EZSwipeControllerFramework */,
+				ABC17FA31CAA448E00141D78 /* EZSwipeController */,
 			);
 		};
 /* End PBXProject section */
@@ -287,7 +287,7 @@
 /* Begin PBXTargetDependency section */
 		E11440C11BF691CC000DDE45 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E11440AA1BF691CC000DDE45 /* EZSwipeController */;
+			target = E11440AA1BF691CC000DDE45 /* EZSwipeControllerSample */;
 			targetProxy = E11440C01BF691CC000DDE45 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -480,7 +480,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		ABC17FAF1CAA448E00141D78 /* Build configuration list for PBXNativeTarget "EZSwipeControllerFramework" */ = {
+		ABC17FAF1CAA448E00141D78 /* Build configuration list for PBXNativeTarget "EZSwipeController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ABC17FAD1CAA448E00141D78 /* Debug */,
@@ -498,7 +498,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E11440C81BF691CC000DDE45 /* Build configuration list for PBXNativeTarget "EZSwipeController" */ = {
+		E11440C81BF691CC000DDE45 /* Build configuration list for PBXNativeTarget "EZSwipeControllerSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E11440C91BF691CC000DDE45 /* Debug */,
