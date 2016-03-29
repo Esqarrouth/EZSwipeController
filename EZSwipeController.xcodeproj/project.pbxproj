@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ABC17FA71CAA448E00141D78 /* Carthage Framework.h in Headers */ = {isa = PBXBuildFile; fileRef = ABC17FA61CAA448E00141D78 /* Carthage Framework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E11440AF1BF691CC000DDE45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11440AE1BF691CC000DDE45 /* AppDelegate.swift */; };
 		E11440B11BF691CC000DDE45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11440B01BF691CC000DDE45 /* ViewController.swift */; };
 		E11440B61BF691CC000DDE45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E11440B51BF691CC000DDE45 /* Assets.xcassets */; };
 		E11440B91BF691CC000DDE45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E11440B71BF691CC000DDE45 /* LaunchScreen.storyboard */; };
 		E11440C41BF691CC000DDE45 /* EZSwipeControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11440C31BF691CC000DDE45 /* EZSwipeControllerUITests.swift */; };
-		E17A9D3E1BF7BB7200E52843 /* EZSwipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A9D3D1BF7BB7200E52843 /* EZSwipeController.swift */; settings = {ASSET_TAGS = (); }; };
-		E19373971BF69D73003F1D99 /* MySwipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19373961BF69D73003F1D99 /* MySwipeVC.swift */; settings = {ASSET_TAGS = (); }; };
+		E17A9D3E1BF7BB7200E52843 /* EZSwipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A9D3D1BF7BB7200E52843 /* EZSwipeController.swift */; };
+		E19373971BF69D73003F1D99 /* MySwipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19373961BF69D73003F1D99 /* MySwipeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +28,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ABC17FA41CAA448E00141D78 /* Carthage Framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Carthage Framework.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABC17FA61CAA448E00141D78 /* Carthage Framework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Carthage Framework.h"; sourceTree = "<group>"; };
+		ABC17FA81CAA448E00141D78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E11440AB1BF691CC000DDE45 /* EZSwipeController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EZSwipeController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E11440AE1BF691CC000DDE45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E11440B01BF691CC000DDE45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +45,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		ABC17FA01CAA448E00141D78 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E11440A81BF691CC000DDE45 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -58,11 +69,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ABC17FA51CAA448E00141D78 /* Carthage Framework */ = {
+			isa = PBXGroup;
+			children = (
+				ABC17FA61CAA448E00141D78 /* Carthage Framework.h */,
+				ABC17FA81CAA448E00141D78 /* Info.plist */,
+			);
+			path = "Carthage Framework";
+			sourceTree = "<group>";
+		};
 		E11440A21BF691CC000DDE45 = {
 			isa = PBXGroup;
 			children = (
 				E11440AD1BF691CC000DDE45 /* EZSwipeController */,
 				E11440C21BF691CC000DDE45 /* EZSwipeControllerUITests */,
+				ABC17FA51CAA448E00141D78 /* Carthage Framework */,
 				E11440AC1BF691CC000DDE45 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,6 +93,7 @@
 			children = (
 				E11440AB1BF691CC000DDE45 /* EZSwipeController.app */,
 				E11440BF1BF691CC000DDE45 /* EZSwipeControllerUITests.xctest */,
+				ABC17FA41CAA448E00141D78 /* Carthage Framework.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,7 +123,36 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		ABC17FA11CAA448E00141D78 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABC17FA71CAA448E00141D78 /* Carthage Framework.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		ABC17FA31CAA448E00141D78 /* Carthage Framework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABC17FAF1CAA448E00141D78 /* Build configuration list for PBXNativeTarget "Carthage Framework" */;
+			buildPhases = (
+				ABC17F9F1CAA448E00141D78 /* Sources */,
+				ABC17FA01CAA448E00141D78 /* Frameworks */,
+				ABC17FA11CAA448E00141D78 /* Headers */,
+				ABC17FA21CAA448E00141D78 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Carthage Framework";
+			productName = "Carthage Framework";
+			productReference = ABC17FA41CAA448E00141D78 /* Carthage Framework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		E11440AA1BF691CC000DDE45 /* EZSwipeController */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E11440C81BF691CC000DDE45 /* Build configuration list for PBXNativeTarget "EZSwipeController" */;
@@ -146,6 +197,9 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Goktug Yilmaz";
 				TargetAttributes = {
+					ABC17FA31CAA448E00141D78 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
 					E11440AA1BF691CC000DDE45 = {
 						CreatedOnToolsVersion = 7.0.1;
 					};
@@ -170,11 +224,19 @@
 			targets = (
 				E11440AA1BF691CC000DDE45 /* EZSwipeController */,
 				E11440BE1BF691CC000DDE45 /* EZSwipeControllerUITests */,
+				ABC17FA31CAA448E00141D78 /* Carthage Framework */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		ABC17FA21CAA448E00141D78 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E11440A91BF691CC000DDE45 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -194,6 +256,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		ABC17F9F1CAA448E00141D78 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E11440A71BF691CC000DDE45 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -235,6 +304,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		ABC17FAD1CAA448E00141D78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Carthage Framework/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gbf.EZSwipeController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		ABC17FAE1CAA448E00141D78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Carthage Framework/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gbf.EZSwipeController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		E11440C61BF691CC000DDE45 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -369,6 +478,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		ABC17FAF1CAA448E00141D78 /* Build configuration list for PBXNativeTarget "Carthage Framework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABC17FAD1CAA448E00141D78 /* Debug */,
+				ABC17FAE1CAA448E00141D78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		E11440A61BF691CC000DDE45 /* Build configuration list for PBXProject "EZSwipeController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
