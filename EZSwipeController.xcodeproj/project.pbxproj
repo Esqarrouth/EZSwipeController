@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ABC17FB21CAA4A2800141D78 /* EZSwipeControllerFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = ABC17FB11CAA4A2800141D78 /* EZSwipeControllerFramework.h */; };
+		ABC17FBB1CAA4E9000141D78 /* EZSwipeController.h in Headers */ = {isa = PBXBuildFile; fileRef = ABC17FBA1CAA4E9000141D78 /* EZSwipeController.h */; };
+		ABC17FBD1CAA4E9800141D78 /* EZSwipeController.h in Headers */ = {isa = PBXBuildFile; fileRef = ABC17FBC1CAA4E9800141D78 /* EZSwipeController.h */; };
 		E11440AF1BF691CC000DDE45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11440AE1BF691CC000DDE45 /* AppDelegate.swift */; };
 		E11440B11BF691CC000DDE45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11440B01BF691CC000DDE45 /* ViewController.swift */; };
 		E11440B61BF691CC000DDE45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E11440B51BF691CC000DDE45 /* Assets.xcassets */; };
@@ -30,7 +31,8 @@
 /* Begin PBXFileReference section */
 		ABC17FA41CAA448E00141D78 /* EZSwipeController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EZSwipeController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABC17FA81CAA448E00141D78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ABC17FB11CAA4A2800141D78 /* EZSwipeControllerFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZSwipeControllerFramework.h; sourceTree = "<group>"; };
+		ABC17FBA1CAA4E9000141D78 /* EZSwipeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EZSwipeController.h; path = "Carthage Framework/EZSwipeController.h"; sourceTree = SOURCE_ROOT; };
+		ABC17FBC1CAA4E9800141D78 /* EZSwipeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZSwipeController.h; sourceTree = "<group>"; };
 		E11440AB1BF691CC000DDE45 /* EZSwipeControllerSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EZSwipeControllerSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E11440AE1BF691CC000DDE45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E11440B01BF691CC000DDE45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,7 +74,7 @@
 		ABC17FA51CAA448E00141D78 /* Carthage Framework */ = {
 			isa = PBXGroup;
 			children = (
-				ABC17FB11CAA4A2800141D78 /* EZSwipeControllerFramework.h */,
+				ABC17FBC1CAA4E9800141D78 /* EZSwipeController.h */,
 				ABC17FA81CAA448E00141D78 /* Info.plist */,
 			);
 			path = "Carthage Framework";
@@ -115,6 +117,7 @@
 		E11440C21BF691CC000DDE45 /* EZSwipeControllerUITests */ = {
 			isa = PBXGroup;
 			children = (
+				ABC17FBA1CAA4E9000141D78 /* EZSwipeController.h */,
 				E11440C31BF691CC000DDE45 /* EZSwipeControllerUITests.swift */,
 				E11440C51BF691CC000DDE45 /* Info.plist */,
 			);
@@ -128,7 +131,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABC17FB21CAA4A2800141D78 /* EZSwipeControllerFramework.h in Headers */,
+				ABC17FBD1CAA4E9800141D78 /* EZSwipeController.h in Headers */,
+				ABC17FBB1CAA4E9000141D78 /* EZSwipeController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
