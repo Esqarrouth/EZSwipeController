@@ -22,40 +22,30 @@ public class EZSwipeController: UIViewController {
 
     public struct Constants {
         public static var Orientation: UIInterfaceOrientation {
-            get {
-                return UIApplication.sharedApplication().statusBarOrientation
-            }
+            return UIApplication.sharedApplication().statusBarOrientation
         }
         public static var ScreenWidth: CGFloat {
-            get {
-                if UIInterfaceOrientationIsPortrait(Orientation) {
-                    return UIScreen.mainScreen().bounds.size.width
-                } else {
-                    return UIScreen.mainScreen().bounds.size.height
-                }
+            if UIInterfaceOrientationIsPortrait(Orientation) {
+                return UIScreen.mainScreen().bounds.width
+            } else {
+                return UIScreen.mainScreen().bounds.height
             }
         }
         public static var ScreenHeight: CGFloat {
-            get {
-                if UIInterfaceOrientationIsPortrait(Orientation) {
-                    return UIScreen.mainScreen().bounds.size.height
-                } else {
-                    return UIScreen.mainScreen().bounds.size.width
-                }
+            if UIInterfaceOrientationIsPortrait(Orientation) {
+                return UIScreen.mainScreen().bounds.height
+            } else {
+                return UIScreen.mainScreen().bounds.width
             }
         }
         public static var StatusBarHeight: CGFloat {
-            get {
-                return UIApplication.sharedApplication().statusBarFrame.height
-            }
+            return UIApplication.sharedApplication().statusBarFrame.height
         }
         public static var ScreenHeightWithoutStatusBar: CGFloat {
-            get {
-                if UIInterfaceOrientationIsPortrait(Orientation) {
-                    return UIScreen.mainScreen().bounds.size.height - StatusBarHeight
-                } else {
-                    return UIScreen.mainScreen().bounds.size.width - StatusBarHeight
-                }
+            if UIInterfaceOrientationIsPortrait(Orientation) {
+                return UIScreen.mainScreen().bounds.height - StatusBarHeight
+            } else {
+                return UIScreen.mainScreen().bounds.width - StatusBarHeight
             }
         }
         public static let navigationBarHeight: CGFloat = 44
@@ -72,9 +62,7 @@ public class EZSwipeController: UIViewController {
     public var titleButton: UIButton?
     public var currentStackVC: UIViewController!
     public var currentVCIndex: Int {
-        get {
-            return stackPageVC.indexOf(currentStackVC)!
-        }
+        return stackPageVC.indexOf(currentStackVC)!
     }
     public var datasource: EZSwipeControllerDataSource?
 
@@ -93,17 +81,18 @@ public class EZSwipeController: UIViewController {
     }
 
     private func setupDefaultNavigationBars(pageTitles: [String]) {
-        guard navigationBarShouldNotExist == false else {
+        guard !navigationBarShouldNotExist else {
             return
         }
 
         var navBars = [UINavigationBar]()
-        for index in 0..<pageTitles.count {
-            let navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: Constants.ScreenWidth, height: Constants.navigationBarHeight))
-            navigationBar.barStyle = UIBarStyle.Default
+        pageTitles.forEach { title in
+            let navigationBarSize = CGSize(width: Constants.ScreenWidth, height: Constants.navigationBarHeight)
+            let navigationBar = UINavigationBar(frame: CGRect(origin: CGPoint.zero, size: navigationBarSize))
+            navigationBar.barStyle = .Default
             navigationBar.barTintColor = Constants.lightGrayColor
 
-            let navigationItem = UINavigationItem(title: pageTitles[index])
+            let navigationItem = UINavigationItem(title: title)
             navigationItem.hidesBackButton = true
             navigationItem.leftBarButtonItem = nil
             navigationItem.rightBarButtonItem = nil
@@ -115,10 +104,7 @@ public class EZSwipeController: UIViewController {
     }
 
     private func setupNavigationBar() {
-        guard stackNavBars.isEmpty else {
-            return
-        }
-        guard navigationBarShouldNotExist == false else {
+        guard stackNavBars.isEmpty || !navigationBarShouldNotExist else {
             return
         }
         guard let _ = datasource?.navigationBarDataForPageIndex?(0) else {
@@ -137,49 +123,48 @@ public class EZSwipeController: UIViewController {
                 } else {
                     nav.frame = CGRect(x: 0, y: 0, width: Constants.ScreenWidth, height: Constants.navigationBarHeight)
                 }
-
-                if cancelStandardButtonEvents == false {
-                    for item in nav.items! {
+                
+                if let items = nav.items where !cancelStandardButtonEvents {
+                    items.forEach { item in
                         if let leftButton = item.leftBarButtonItem {
                             leftButton.target = self
-                            leftButton.action = "clickedLeftButton"
+                            leftButton.action = #selector(leftButtonAction)
                         }
                         if let rightButton = item.rightBarButtonItem {
                             rightButton.target = self
-                            rightButton.action = "clickedRightButton"
+                            rightButton.action = #selector(rightButtonAction)
                         }
                     }
                 }
-                stackNavBars.append(navigationBar!)
+                stackNavBars.append(nav)
             }
         }
     }
 
     private func setupViewControllers() {
         stackPageVC = [UIViewController]()
-        for index in 0..<stackVC.count {
-            let pageVC = UIViewController()
-            if !navigationBarShouldBeOnBottom {
-                if !navigationBarShouldNotExist {
-                    stackVC[index].view.frame.origin.y += Constants.navigationBarHeight
-                }
+        stackVC.enumerate().forEach { index, viewController in
+            let pageViewController = UIViewController()
+            if !navigationBarShouldBeOnBottom && !navigationBarShouldNotExist {
+                viewController.view.frame.origin.y += Constants.navigationBarHeight
             }
-            pageVC.addChildViewController(stackVC[index])
-            pageVC.view.addSubview(stackVC[index].view)
-            stackVC[index].didMoveToParentViewController(pageVC)
+            pageViewController.addChildViewController(viewController)
+            pageViewController.view.addSubview(viewController.view)
+            viewController.didMoveToParentViewController(pageViewController)
             if !stackNavBars.isEmpty {
-                pageVC.view.addSubview(stackNavBars[index])
+                pageViewController.view.addSubview(stackNavBars[index])
             }
-            stackPageVC.append(pageVC)
+            stackPageVC.append(pageViewController)
         }
+        
         currentStackVC = stackPageVC[stackStartLocation]
     }
 
     private func setupPageViewController() {
-        pageViewController = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.Scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.Horizontal, options: nil)
+        pageViewController = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
         pageViewController.dataSource = self
         pageViewController.delegate = self
-        pageViewController.setViewControllers([stackPageVC[stackStartLocation]], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
+        pageViewController.setViewControllers([stackPageVC[stackStartLocation]], direction: .Forward, animated: true, completion: nil)
         var pageViewControllerY: CGFloat = 0
         var pageViewControllerH: CGFloat = 0
         if navigationBarShouldNotExist {
@@ -217,7 +202,7 @@ public class EZSwipeController: UIViewController {
         super.viewDidLoad()
     }
 
-    @objc private func clickedLeftButton() {
+    @objc public func leftButtonAction() {
         let currentIndex = stackPageVC.indexOf(currentStackVC)!
         datasource?.clickedLeftButtonFromPageIndex?(currentIndex)
 
@@ -233,7 +218,7 @@ public class EZSwipeController: UIViewController {
         pageViewController.setViewControllers([currentStackVC], direction: UIPageViewControllerNavigationDirection.Reverse, animated: true, completion: nil)
     }
 
-    @objc private func clickedRightButton() {
+    @objc public func rightButtonAction() {
         let currentIndex = stackPageVC.indexOf(currentStackVC)!
         datasource?.clickedRightButtonFromPageIndex?(currentIndex)
 
@@ -248,7 +233,6 @@ public class EZSwipeController: UIViewController {
         currentStackVC = stackPageVC[currentIndex + 1]
         pageViewController.setViewControllers([currentStackVC], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
     }
-
 }
 
 extension EZSwipeController: UIPageViewControllerDataSource {
@@ -266,7 +250,6 @@ extension EZSwipeController: UIPageViewControllerDataSource {
         }
         return stackPageVC[stackPageVC.indexOf(viewController)! + 1]
     }
-
 }
 
 extension EZSwipeController: UIPageViewControllerDelegate {
@@ -277,6 +260,5 @@ extension EZSwipeController: UIPageViewControllerDelegate {
         }
         currentStackVC = stackPageVC[stackPageVC.indexOf(pageViewController.viewControllers!.first!)!]
     }
-
 }
 

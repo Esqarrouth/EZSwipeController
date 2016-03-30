@@ -64,7 +64,7 @@ extension MySwipeVC: EZSwipeControllerDataSource {
         if index == 0 {
             var sImage = UIImage(named: "squir")!
             sImage = scaleTo(image: sImage, w: 22, h: 22)
-            let rightButtonItem = UIBarButtonItem(image: sImage, style: UIBarButtonItemStyle.Plain, target: self, action: "a")
+            let rightButtonItem = UIBarButtonItem(image: sImage, style: .Plain, target: self, action: nil)
             rightButtonItem.tintColor = UIColor.blueColor()
             
             navigationItem.leftBarButtonItem = nil
@@ -72,12 +72,12 @@ extension MySwipeVC: EZSwipeControllerDataSource {
         } else if index == 1 {
             var cImage = UIImage(named: "char")!
             cImage = scaleTo(image: cImage, w: 22, h: 22)
-            let leftButtonItem = UIBarButtonItem(image: cImage, style: UIBarButtonItemStyle.Plain, target: self, action: "a")
+            let leftButtonItem = UIBarButtonItem(image: cImage, style: .Plain, target: self, action: nil)
             leftButtonItem.tintColor = UIColor.redColor()
             
             var bImage = UIImage(named: "bulb")!
             bImage = scaleTo(image: bImage, w: 22, h: 22)
-            let rightButtonItem = UIBarButtonItem(image: bImage, style: UIBarButtonItemStyle.Plain, target: self, action: "a")
+            let rightButtonItem = UIBarButtonItem(image: bImage, style: .Plain, target: self, action: nil)
             rightButtonItem.tintColor = UIColor.greenColor()
             
             navigationItem.leftBarButtonItem = leftButtonItem
@@ -85,7 +85,7 @@ extension MySwipeVC: EZSwipeControllerDataSource {
         } else if index == 2 {
             var sImage = UIImage(named: "squir")!
             sImage = scaleTo(image: sImage, w: 22, h: 22)
-            let leftButtonItem = UIBarButtonItem(image: sImage, style: UIBarButtonItemStyle.Plain, target: self, action: "a")
+            let leftButtonItem = UIBarButtonItem(image: sImage, style: .Plain, target: self, action: nil)
             leftButtonItem.tintColor = UIColor.blueColor()
             
             navigationItem.leftBarButtonItem = leftButtonItem
@@ -96,8 +96,8 @@ extension MySwipeVC: EZSwipeControllerDataSource {
     }
     
     func alert(title title: String?, message: String, action: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: action, style: UIAlertActionStyle.Default, handler: nil))
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: action, style: .Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
     }
 }
