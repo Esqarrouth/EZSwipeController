@@ -234,6 +234,20 @@ public class EZSwipeController: UIViewController {
         currentStackVC = stackPageVC[currentIndex + 1]
         pageViewController.setViewControllers([currentStackVC], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
     }
+    
+    public func moveToPage(index: Int) {
+        let currentIndex = stackPageVC.indexOf(currentStackVC)!
+        
+        var direction: UIPageViewControllerNavigationDirection = .Reverse
+        
+        if index > currentIndex {
+            direction = .Forward
+        }
+        
+        currentStackVC = stackPageVC[index]
+        
+        pageViewController.setViewControllers([currentStackVC], direction: direction, animated: true, completion: nil)
+    }
 }
 
 extension EZSwipeController: UIPageViewControllerDataSource {

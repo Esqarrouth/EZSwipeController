@@ -319,6 +319,19 @@ class MySwipeVC: EZSwipeController {
 }
 ```
 
+####Move To New Page
+
+``` swift
+class MySwipeVC: EZSwipeController {
+    override func setupView() {
+        super.setupView()
+        datasource = self
+        
+        self.moveToPage(0)
+    }
+}
+```
+
 <img src="Examplepics/navbar_bottom.gif" width="200">
 
 ####Hide Navigation Bar
