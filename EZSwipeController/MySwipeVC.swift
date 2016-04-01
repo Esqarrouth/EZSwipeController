@@ -95,6 +95,10 @@ extension MySwipeVC: EZSwipeControllerDataSource {
         return navigationBar
     }
     
+    func changedToPageIndex(index: Int) {
+        print("Page has changed to: \(index)")
+    }
+    
     func alert(title title: String?, message: String, action: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: action, style: .Default, handler: nil))
