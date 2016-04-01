@@ -145,12 +145,12 @@ extension MySwipeVC: EZSwipeControllerDataSource {
 }
 ```
 
-####Changed Page Index
+####On Changed Page Index
 
 ``` swift
 extension MySwipeVC: EZSwipeControllerDataSource {
     func changedToPageIndex(index: Int) {
-    	// The index starts from 0, you can do anything from here
+    	// You can do anything from here, for now we'll just print the new index
         print(index)
     }
 }
