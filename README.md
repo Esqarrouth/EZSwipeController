@@ -323,6 +323,13 @@ self.currentVCIndex
 - Better documentation with more fancy pictures!
 - Completing `TODO`s inside source files
 
+##Communication
+
+- If you **need help**, use [Stack Overflow](http://stackoverflow.com/questions/tagged/ezswipecontroller). (Tag 'ezswipecontroller')
+- If you **found a bug**, open an issue.
+- If you **have a feature request**, open an issue.
+- If you **want to contribute**, submit a pull request.
+
 ##License
 EZSwipeController is available under the MIT license. See the [LICENSE file](https://github.com/goktugyil/EZSwipeController/blob/master/LICENSE).
 
