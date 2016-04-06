@@ -15,7 +15,7 @@ Easy to use UIPageViewController to create a view navigation like Snapchat/Tinde
 
 ## Install via CocoaPods (~10 seconds)
 
-You can use [Cocoapods](http://cocoapods.org/) to install `EZSwipeController` by adding it to your `Podfile`:
+You can use [CocoaPods](http://cocoapods.org/) to install `EZSwipeController` by adding it to your `Podfile`:
 
 ```ruby
 platform :ios, '8.0'
@@ -84,7 +84,7 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
 
 ``` swift
 import UIKit
-// import EZSwipeController // if using Cocoapods
+// import EZSwipeController // if using CocoaPods
 class MySwipeVC: EZSwipeController {
     override func setupView() {
         datasource = self
@@ -370,6 +370,13 @@ self.currentVCIndex
 
 - Better documentation with more fancy pictures!
 - Completing `TODO`s inside source files
+
+##Communication
+
+- If you **need help**, use [Stack Overflow](http://stackoverflow.com/questions/tagged/ezswipecontroller). (Tag 'ezswipecontroller')
+- If you **found a bug**, open an issue.
+- If you **have a feature request**, open an issue.
+- If you **want to contribute**, submit a pull request.
 
 ##License
 EZSwipeController is available under the MIT license. See the [LICENSE file](https://github.com/goktugyil/EZSwipeController/blob/master/LICENSE).

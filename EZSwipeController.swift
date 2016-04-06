@@ -82,9 +82,7 @@ public class EZSwipeController: UIViewController {
     }
 
     private func setupDefaultNavigationBars(pageTitles: [String]) {
-        guard !navigationBarShouldNotExist else {
-            return
-        }
+        guard !navigationBarShouldNotExist else { return }
 
         var navBars = [UINavigationBar]()
         pageTitles.forEach { title in
@@ -105,9 +103,9 @@ public class EZSwipeController: UIViewController {
     }
 
     private func setupNavigationBar() {
-        guard stackNavBars.isEmpty || !navigationBarShouldNotExist else {
-            return
-        }
+        guard stackNavBars.isEmpty else { return }
+        guard !navigationBarShouldNotExist else { return }
+
         guard let _ = datasource?.navigationBarDataForPageIndex?(0) else {
             if let titles = datasource?.titlesForPages?() {
                 setupDefaultNavigationBars(titles)
