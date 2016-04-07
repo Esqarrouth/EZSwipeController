@@ -29,11 +29,14 @@ extension MySwipeVC: EZSwipeControllerDataSource {
         redVC.view.backgroundColor = UIColor.redColor()
         let char = UIImageView(x: 50, y: 100, imageName: "char", scaleToWidth: 300)
         redVC.view.addSubview(char)
-        let test = UIButton(frame: CGRect(x: 200, y: 250, width: 140, height: 140))
-        test.titleLabel!.text = "Testing"
-        test.backgroundColor = UIColor.orangeColor()
-        test.addTarget(self, action: #selector(MySwipeVC.moveToEnd), forControlEvents: UIControlEvents.TouchDown)
-        redVC.view.addSubview(test)
+        
+        let testButton = UIButton(frame: CGRect(x: 250, y: 30, width: 100, height: 100))
+        testButton.setTitle("Click for last page", forState: UIControlState.Normal)
+        testButton.setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
+        testButton.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        testButton.backgroundColor = UIColor.greenColor()
+        testButton.addTarget(self, action: #selector(MySwipeVC.moveToEnd), forControlEvents: UIControlEvents.AllTouchEvents)
+        redVC.view.addSubview(testButton)
         
         let blueVC = UIViewController()
         blueVC.view.backgroundColor = UIColor.blueColor()
