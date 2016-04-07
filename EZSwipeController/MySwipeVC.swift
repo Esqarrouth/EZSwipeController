@@ -35,7 +35,7 @@ extension MySwipeVC: EZSwipeControllerDataSource {
         testButton.setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
         testButton.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
         testButton.backgroundColor = UIColor.greenColor()
-        testButton.addTarget(self, action: #selector(MySwipeVC.moveToEnd), forControlEvents: UIControlEvents.AllTouchEvents)
+        testButton.addTarget(self, action: #selector(MySwipeVC.moveToEnd), forControlEvents: UIControlEvents.TouchUpInside)
         redVC.view.addSubview(testButton)
         
         let blueVC = UIViewController()

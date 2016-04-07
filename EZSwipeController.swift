@@ -213,7 +213,10 @@ public class EZSwipeController: UIViewController {
         if currentStackVC == stackPageVC.first {
             return
         }
-        currentStackVC = stackPageVC[currentIndex - 1]
+        
+        let newVCIndex = currentIndex - 1
+        datasource?.changedToPageIndex?(newVCIndex)
+        currentStackVC = stackPageVC[newVCIndex]
         pageViewController.setViewControllers([currentStackVC], direction: UIPageViewControllerNavigationDirection.Reverse, animated: true, completion: nil)
     }
 
@@ -229,7 +232,11 @@ public class EZSwipeController: UIViewController {
         if currentStackVC == stackPageVC.last {
             return
         }
-        currentStackVC = stackPageVC[currentIndex + 1]
+        
+        let newVCIndex = currentIndex + 1
+        datasource?.changedToPageIndex?(newVCIndex)
+
+        currentStackVC = stackPageVC[newVCIndex]
         pageViewController.setViewControllers([currentStackVC], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
     }
     
@@ -242,6 +249,7 @@ public class EZSwipeController: UIViewController {
             direction = .Forward
         }
         
+        datasource?.changedToPageIndex?(index)
         currentStackVC = stackPageVC[index]
         
         pageViewController.setViewControllers([currentStackVC], direction: direction, animated: true, completion: nil)
