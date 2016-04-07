@@ -1,6 +1,7 @@
 # EZSwipeController
 
-[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/EZSwipeController.svg)](https://img.shields.io/cocoapods/v/EZSwipeController.svg)  
+[![Cocoapods Compatible](https://img.shields.io/cocoapods/v/EZSwipeController.svg)](https://img.shields.io/cocoapods/v/EZSwipeController.svg)  
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 Easy to use UIPageViewController to create a view navigation like Snapchat/Tinder/iOS Main Pages.
 
@@ -10,6 +11,7 @@ Easy to use UIPageViewController to create a view navigation like Snapchat/Tinde
 
 1. Download and drop 'EZSwipeController.swift' in your project.  
 2. Congratulations!
+
 
 ## Install via CocoaPods (~10 seconds)
 
@@ -23,6 +25,28 @@ pod 'EZSwipeController'
 
 ``` swift
 import EZSwipeController
+```
+
+## Install via Carthage (~5 seconds)
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that automates the process of adding frameworks to your Cocoa application.
+
+You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To integrate EZSwipeController into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+```ogdl
+github "goktugyil/EZSwipeController"
+```
+Run `carthage update`.
+
+```bash
+$ carthage update
 ```
 
 ##Setup
@@ -117,6 +141,17 @@ extension MySwipeVC: EZSwipeControllerDataSource {
 extension MySwipeVC: EZSwipeControllerDataSource {
     func indexOfStartingPage() -> Int {
         return 2 // EZSwipeController starts from 2nd, green page
+    }
+}
+```
+
+####On Changed Page Index
+
+``` swift
+extension MySwipeVC: EZSwipeControllerDataSource {
+    func changedToPageIndex(index: Int) {
+    	// You can do anything from here, for now we'll just print the new index
+        print(index)
     }
 }
 ```
@@ -280,6 +315,19 @@ class MySwipeVC: EZSwipeController {
         super.setupView()
         datasource = self
         navigationBarShouldBeOnBottom = true
+    }
+}
+```
+
+####Move To New Page
+
+``` swift
+class MySwipeVC: EZSwipeController {
+    override func setupView() {
+        super.setupView()
+        datasource = self
+        
+        self.moveToPage(0)
     }
 }
 ```

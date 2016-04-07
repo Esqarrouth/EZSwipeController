@@ -29,6 +29,11 @@ extension MySwipeVC: EZSwipeControllerDataSource {
         redVC.view.backgroundColor = UIColor.redColor()
         let char = UIImageView(x: 50, y: 100, imageName: "char", scaleToWidth: 300)
         redVC.view.addSubview(char)
+        let test = UIButton(frame: CGRect(x: 200, y: 250, width: 140, height: 140))
+        test.titleLabel!.text = "Testing"
+        test.backgroundColor = UIColor.orangeColor()
+        test.addTarget(self, action: #selector(MySwipeVC.moveToEnd), forControlEvents: UIControlEvents.TouchDown)
+        redVC.view.addSubview(test)
         
         let blueVC = UIViewController()
         blueVC.view.backgroundColor = UIColor.blueColor()
@@ -93,6 +98,14 @@ extension MySwipeVC: EZSwipeControllerDataSource {
         }
         navigationBar.pushNavigationItem(navigationItem, animated: false)
         return navigationBar
+    }
+    
+    func changedToPageIndex(index: Int) {
+        print("Page has changed to: \(index)")
+    }
+    
+    func moveToEnd() {
+        self.moveToPage(2)
     }
     
     func alert(title title: String?, message: String, action: String) {
