@@ -177,13 +177,18 @@ public class EZSwipeController: UIViewController {
         pageViewController.view.backgroundColor = UIColor.clearColor()
         addChildViewController(pageViewController)
         view.addSubview(pageViewController.view)
+        self.setFrameForCurrentOrientation()
         pageViewController.didMoveToParentViewController(self)
     }
 
     public func setupView() {
 
     }
-
+    
+    public func setFrameForCurrentOrientation(){
+        pageViewController.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
+    }
+    
     override public func loadView() {
         super.loadView()
         stackVC = datasource?.viewControllerData()
@@ -201,6 +206,10 @@ public class EZSwipeController: UIViewController {
         super.viewDidLoad()
     }
 
+    override public func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
+        self.setFrameForCurrentOrientation()
+    }
+    
     @objc public func leftButtonAction() {
         let currentIndex = stackPageVC.indexOf(currentStackVC)!
         datasource?.clickedLeftButtonFromPageIndex?(currentIndex)
