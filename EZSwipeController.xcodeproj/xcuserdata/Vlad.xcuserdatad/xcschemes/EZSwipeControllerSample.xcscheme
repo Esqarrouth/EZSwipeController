@@ -7,16 +7,16 @@
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
-            buildForTesting = "NO"
+            buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "NO"
+            buildForProfiling = "YES"
             buildForArchiving = "YES"
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ABC17FA31CAA448E00141D78"
-               BuildableName = "EZSwipeController.framework"
-               BlueprintName = "EZSwipeController"
+               BlueprintIdentifier = "E11440AA1BF691CC000DDE45"
+               BuildableName = "EZSwipeControllerSample.app"
+               BlueprintName = "EZSwipeControllerSample"
                ReferencedContainer = "container:EZSwipeController.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,13 +28,23 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E11440BE1BF691CC000DDE45"
+               BuildableName = "EZSwipeControllerUITests.xctest"
+               BlueprintName = "EZSwipeControllerUITests"
+               ReferencedContainer = "container:EZSwipeController.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "ABC17FA31CAA448E00141D78"
-            BuildableName = "EZSwipeController.framework"
-            BlueprintName = "EZSwipeController"
+            BlueprintIdentifier = "E11440AA1BF691CC000DDE45"
+            BuildableName = "EZSwipeControllerSample.app"
+            BlueprintName = "EZSwipeControllerSample"
             ReferencedContainer = "container:EZSwipeController.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -51,15 +61,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "ABC17FA31CAA448E00141D78"
-            BuildableName = "EZSwipeController.framework"
-            BlueprintName = "EZSwipeController"
+            BlueprintIdentifier = "E11440AA1BF691CC000DDE45"
+            BuildableName = "EZSwipeControllerSample.app"
+            BlueprintName = "EZSwipeControllerSample"
             ReferencedContainer = "container:EZSwipeController.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -69,6 +80,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "E11440AA1BF691CC000DDE45"
+            BuildableName = "EZSwipeControllerSample.app"
+            BlueprintName = "EZSwipeControllerSample"
+            ReferencedContainer = "container:EZSwipeController.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

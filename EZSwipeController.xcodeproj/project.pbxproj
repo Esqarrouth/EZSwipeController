@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ABC17FBB1CAA4E9000141D78 /* EZSwipeController.h in Headers */ = {isa = PBXBuildFile; fileRef = ABC17FBA1CAA4E9000141D78 /* EZSwipeController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ABC17FBD1CAA4E9800141D78 /* EZSwipeController.h in Headers */ = {isa = PBXBuildFile; fileRef = ABC17FBC1CAA4E9800141D78 /* EZSwipeController.h */; };
 		ABC17FC11CAAE7EF00141D78 /* EZSwipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A9D3D1BF7BB7200E52843 /* EZSwipeController.swift */; };
 		E11440AF1BF691CC000DDE45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11440AE1BF691CC000DDE45 /* AppDelegate.swift */; };
@@ -133,7 +132,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABC17FBD1CAA4E9800141D78 /* EZSwipeController.h in Headers */,
-				ABC17FBB1CAA4E9000141D78 /* EZSwipeController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,17 +197,20 @@
 		E11440A31BF691CC000DDE45 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Goktug Yilmaz";
 				TargetAttributes = {
 					ABC17FA31CAA448E00141D78 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 					};
 					E11440AA1BF691CC000DDE45 = {
 						CreatedOnToolsVersion = 7.0.1;
+						LastSwiftMigration = 0800;
 					};
 					E11440BE1BF691CC000DDE45 = {
 						CreatedOnToolsVersion = 7.0.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = E11440AA1BF691CC000DDE45;
 					};
 				};
@@ -313,12 +314,12 @@
 		ABC17FAD1CAA448E00141D78 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				INFOPLIST_FILE = "Carthage Framework/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -326,6 +327,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gbf.EZSwipeController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				USE_HEADERMAP = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -335,12 +337,12 @@
 		ABC17FAE1CAA448E00141D78 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				INFOPLIST_FILE = "Carthage Framework/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -348,6 +350,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gbf.EZSwipeController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				USE_HEADERMAP = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -446,6 +450,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gbf.EZSwipeController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -458,6 +463,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gbf.EZSwipeController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -468,6 +475,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gbf.EZSwipeControllerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = EZSwipeController;
 				USES_XCTRUNNER = YES;
 			};
@@ -480,6 +488,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gbf.EZSwipeControllerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = EZSwipeController;
 				USES_XCTRUNNER = YES;
 			};

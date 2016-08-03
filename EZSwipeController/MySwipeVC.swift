@@ -26,32 +26,32 @@ extension MySwipeVC: EZSwipeControllerDataSource {
     
     func viewControllerData() -> [UIViewController] {
         let redVC = UIViewController()
-        redVC.view.backgroundColor = UIColor.redColor()
+        redVC.view.backgroundColor = UIColor.red()
         let char = UIImageView(x: 50, y: 100, imageName: "char", scaleToWidth: 300)
         redVC.view.addSubview(char)
         
         let testButton = UIButton(frame: CGRect(x: 250, y: 30, width: 100, height: 100))
-        testButton.setTitle("Click for last page", forState: UIControlState.Normal)
-        testButton.setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
-        testButton.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        testButton.backgroundColor = UIColor.greenColor()
-        testButton.addTarget(self, action: #selector(MySwipeVC.moveToEnd), forControlEvents: UIControlEvents.TouchUpInside)
+        testButton.setTitle("Click for last page", for: UIControlState())
+        testButton.setTitleColor(UIColor.red(), for: UIControlState())
+        testButton.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+        testButton.backgroundColor = UIColor.green()
+        testButton.addTarget(self, action: #selector(MySwipeVC.moveToEnd), for: UIControlEvents.touchUpInside)
         redVC.view.addSubview(testButton)
         
         let blueVC = UIViewController()
-        blueVC.view.backgroundColor = UIColor.blueColor()
+        blueVC.view.backgroundColor = UIColor.blue()
         let squir = UIImageView(x: 50, y: 100, imageName: "squir", scaleToWidth: 300)
         blueVC.view.addSubview(squir)
 
         let greenVC = UIViewController()
-        greenVC.view.backgroundColor = UIColor.greenColor()
+        greenVC.view.backgroundColor = UIColor.green()
         let bulb = UIImageView(x: 50, y: 125, imageName: "bulb", scaleToWidth: 300)
         greenVC.view.addSubview(bulb)
 
         return [redVC, blueVC, greenVC]
     }
     
-    func navigationBarDataForPageIndex(index: Int) -> UINavigationBar {
+    func navigationBarDataForPageIndex(_ index: Int) -> UINavigationBar {
         var title = ""
         if index == 0 {
             title = "Charmander"
@@ -62,9 +62,9 @@ extension MySwipeVC: EZSwipeControllerDataSource {
         }
 
         let navigationBar = UINavigationBar()
-        navigationBar.barStyle = UIBarStyle.Default
+        navigationBar.barStyle = UIBarStyle.default
         navigationBar.barTintColor = UIColor(red: 231/255, green: 231/255, blue: 231/255, alpha: 1)
-        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.blackColor()]
+        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.black()]
         
         let navigationItem = UINavigationItem(title: title)
         navigationItem.hidesBackButton = true
@@ -72,38 +72,38 @@ extension MySwipeVC: EZSwipeControllerDataSource {
         if index == 0 {
             var sImage = UIImage(named: "squir")!
             sImage = scaleTo(image: sImage, w: 22, h: 22)
-            let rightButtonItem = UIBarButtonItem(image: sImage, style: .Plain, target: self, action: nil)
-            rightButtonItem.tintColor = UIColor.blueColor()
+            let rightButtonItem = UIBarButtonItem(image: sImage, style: .plain, target: self, action: nil)
+            rightButtonItem.tintColor = UIColor.blue()
             
             navigationItem.leftBarButtonItem = nil
             navigationItem.rightBarButtonItem = rightButtonItem
         } else if index == 1 {
             var cImage = UIImage(named: "char")!
             cImage = scaleTo(image: cImage, w: 22, h: 22)
-            let leftButtonItem = UIBarButtonItem(image: cImage, style: .Plain, target: self, action: nil)
-            leftButtonItem.tintColor = UIColor.redColor()
+            let leftButtonItem = UIBarButtonItem(image: cImage, style: .plain, target: self, action: nil)
+            leftButtonItem.tintColor = UIColor.red()
             
             var bImage = UIImage(named: "bulb")!
             bImage = scaleTo(image: bImage, w: 22, h: 22)
-            let rightButtonItem = UIBarButtonItem(image: bImage, style: .Plain, target: self, action: nil)
-            rightButtonItem.tintColor = UIColor.greenColor()
+            let rightButtonItem = UIBarButtonItem(image: bImage, style: .plain, target: self, action: nil)
+            rightButtonItem.tintColor = UIColor.green()
             
             navigationItem.leftBarButtonItem = leftButtonItem
             navigationItem.rightBarButtonItem = rightButtonItem
         } else if index == 2 {
             var sImage = UIImage(named: "squir")!
             sImage = scaleTo(image: sImage, w: 22, h: 22)
-            let leftButtonItem = UIBarButtonItem(image: sImage, style: .Plain, target: self, action: nil)
-            leftButtonItem.tintColor = UIColor.blueColor()
+            let leftButtonItem = UIBarButtonItem(image: sImage, style: .plain, target: self, action: nil)
+            leftButtonItem.tintColor = UIColor.blue()
             
             navigationItem.leftBarButtonItem = leftButtonItem
             navigationItem.rightBarButtonItem = nil
         }
-        navigationBar.pushNavigationItem(navigationItem, animated: false)
+        navigationBar.pushItem(navigationItem, animated: false)
         return navigationBar
     }
     
-    func changedToPageIndex(index: Int) {
+    func changedToPageIndex(_ index: Int) {
         print("Page has changed to: \(index)")
     }
     
@@ -111,18 +111,18 @@ extension MySwipeVC: EZSwipeControllerDataSource {
         self.moveToPage(2)
     }
     
-    func alert(title title: String?, message: String, action: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: action, style: .Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
+    func alert(title: String?, message: String, action: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: action, style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
-private func scaleTo(image image: UIImage, w: CGFloat, h: CGFloat) -> UIImage {
+private func scaleTo(image: UIImage, w: CGFloat, h: CGFloat) -> UIImage {
     let newSize = CGSize(width: w, height: h)
     UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
-    image.drawInRect(CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
-    let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+    image.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
+    let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
     UIGraphicsEndImageContext()
     return newImage
 }
@@ -157,7 +157,7 @@ private extension UIImageView {
     }
     
     /// EZSwiftExtensions, scales this ImageView size to fit the given width
-    func scaleImageFrameToWidth(width width: CGFloat) {
+    func scaleImageFrameToWidth(width: CGFloat) {
         let widthRatio = image!.size.width / width
         let newWidth = image!.size.width / widthRatio
         let newHeigth = image!.size.height / widthRatio
