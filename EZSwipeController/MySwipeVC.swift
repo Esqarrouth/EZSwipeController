@@ -26,25 +26,25 @@ extension MySwipeVC: EZSwipeControllerDataSource {
     
     func viewControllerData() -> [UIViewController] {
         let redVC = UIViewController()
-        redVC.view.backgroundColor = UIColor.red()
+        redVC.view.backgroundColor = UIColor.red
         let char = UIImageView(x: 50, y: 100, imageName: "char", scaleToWidth: 300)
         redVC.view.addSubview(char)
         
         let testButton = UIButton(frame: CGRect(x: 250, y: 30, width: 100, height: 100))
         testButton.setTitle("Click for last page", for: UIControlState())
-        testButton.setTitleColor(UIColor.red(), for: UIControlState())
+        testButton.setTitleColor(UIColor.red, for: UIControlState())
         testButton.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
-        testButton.backgroundColor = UIColor.green()
+        testButton.backgroundColor = UIColor.green
         testButton.addTarget(self, action: #selector(MySwipeVC.moveToEnd), for: UIControlEvents.touchUpInside)
         redVC.view.addSubview(testButton)
         
         let blueVC = UIViewController()
-        blueVC.view.backgroundColor = UIColor.blue()
+        blueVC.view.backgroundColor = UIColor.blue
         let squir = UIImageView(x: 50, y: 100, imageName: "squir", scaleToWidth: 300)
         blueVC.view.addSubview(squir)
 
         let greenVC = UIViewController()
-        greenVC.view.backgroundColor = UIColor.green()
+        greenVC.view.backgroundColor = UIColor.green
         let bulb = UIImageView(x: 50, y: 125, imageName: "bulb", scaleToWidth: 300)
         greenVC.view.addSubview(bulb)
 
@@ -64,7 +64,7 @@ extension MySwipeVC: EZSwipeControllerDataSource {
         let navigationBar = UINavigationBar()
         navigationBar.barStyle = UIBarStyle.default
         navigationBar.barTintColor = UIColor(red: 231/255, green: 231/255, blue: 231/255, alpha: 1)
-        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.black()]
+        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.black]
         
         let navigationItem = UINavigationItem(title: title)
         navigationItem.hidesBackButton = true
@@ -73,7 +73,7 @@ extension MySwipeVC: EZSwipeControllerDataSource {
             var sImage = UIImage(named: "squir")!
             sImage = scaleTo(image: sImage, w: 22, h: 22)
             let rightButtonItem = UIBarButtonItem(image: sImage, style: .plain, target: self, action: nil)
-            rightButtonItem.tintColor = UIColor.blue()
+            rightButtonItem.tintColor = UIColor.blue
             
             navigationItem.leftBarButtonItem = nil
             navigationItem.rightBarButtonItem = rightButtonItem
@@ -81,12 +81,12 @@ extension MySwipeVC: EZSwipeControllerDataSource {
             var cImage = UIImage(named: "char")!
             cImage = scaleTo(image: cImage, w: 22, h: 22)
             let leftButtonItem = UIBarButtonItem(image: cImage, style: .plain, target: self, action: nil)
-            leftButtonItem.tintColor = UIColor.red()
+            leftButtonItem.tintColor = UIColor.red
             
             var bImage = UIImage(named: "bulb")!
             bImage = scaleTo(image: bImage, w: 22, h: 22)
             let rightButtonItem = UIBarButtonItem(image: bImage, style: .plain, target: self, action: nil)
-            rightButtonItem.tintColor = UIColor.green()
+            rightButtonItem.tintColor = UIColor.green
             
             navigationItem.leftBarButtonItem = leftButtonItem
             navigationItem.rightBarButtonItem = rightButtonItem
@@ -94,7 +94,7 @@ extension MySwipeVC: EZSwipeControllerDataSource {
             var sImage = UIImage(named: "squir")!
             sImage = scaleTo(image: sImage, w: 22, h: 22)
             let leftButtonItem = UIBarButtonItem(image: sImage, style: .plain, target: self, action: nil)
-            leftButtonItem.tintColor = UIColor.blue()
+            leftButtonItem.tintColor = UIColor.blue
             
             navigationItem.leftBarButtonItem = leftButtonItem
             navigationItem.rightBarButtonItem = nil

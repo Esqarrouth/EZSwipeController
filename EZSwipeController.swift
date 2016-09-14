@@ -23,30 +23,30 @@ public class EZSwipeController: UIViewController {
 
     public struct Constants {
         public static var Orientation: UIInterfaceOrientation {
-            return UIApplication.shared().statusBarOrientation
+            return UIApplication.shared.statusBarOrientation
         }
         public static var ScreenWidth: CGFloat {
             if UIInterfaceOrientationIsPortrait(Orientation) {
-                return UIScreen.main().bounds.width
+                return UIScreen.main.bounds.width
             } else {
-                return UIScreen.main().bounds.height
+                return UIScreen.main.bounds.height
             }
         }
         public static var ScreenHeight: CGFloat {
             if UIInterfaceOrientationIsPortrait(Orientation) {
-                return UIScreen.main().bounds.height
+                return UIScreen.main.bounds.height
             } else {
-                return UIScreen.main().bounds.width
+                return UIScreen.main.bounds.width
             }
         }
         public static var StatusBarHeight: CGFloat {
-            return UIApplication.shared().statusBarFrame.height
+            return UIApplication.shared.statusBarFrame.height
         }
         public static var ScreenHeightWithoutStatusBar: CGFloat {
             if UIInterfaceOrientationIsPortrait(Orientation) {
-                return UIScreen.main().bounds.height - StatusBarHeight
+                return UIScreen.main.bounds.height - StatusBarHeight
             } else {
-                return UIScreen.main().bounds.width - StatusBarHeight
+                return UIScreen.main.bounds.width - StatusBarHeight
             }
         }
         public static let navigationBarHeight: CGFloat = 44
@@ -123,7 +123,7 @@ public class EZSwipeController: UIViewController {
                     nav.frame = CGRect(x: 0, y: 0, width: Constants.ScreenWidth, height: Constants.navigationBarHeight)
                 }
                 
-                if let items = nav.items where !cancelStandardButtonEvents {
+                if let items = nav.items , !cancelStandardButtonEvents {
                     items.forEach { item in
                         if let leftButton = item.leftBarButtonItem {
                             leftButton.target = self
@@ -174,7 +174,7 @@ public class EZSwipeController: UIViewController {
             pageViewControllerH = Constants.ScreenHeightWithoutStatusBar
         }
         pageViewController.view.frame = CGRect(x: 0, y: pageViewControllerY, width: Constants.ScreenWidth, height: pageViewControllerH)
-        pageViewController.view.backgroundColor = UIColor.clear()
+        pageViewController.view.backgroundColor = UIColor.clear
         addChildViewController(pageViewController)
         view.addSubview(pageViewController.view)
         self.setFrameForCurrentOrientation()
