@@ -19,7 +19,7 @@ import UIKit
     @objc optional func changedToPageIndex(_ index: Int)
 }
 
-public class EZSwipeController: UIViewController {
+open class EZSwipeController: UIViewController {
 
     public struct Constants {
         public static var Orientation: UIInterfaceOrientation {
@@ -59,19 +59,20 @@ public class EZSwipeController: UIViewController {
     public var stackStartLocation: Int!
 
     public var bottomNavigationHeight: CGFloat = 44
-    public var pageViewController: UIPageViewController!
+    open var pageViewController: UIPageViewController!
     public var titleButton: UIButton?
-    public var currentStackVC: UIViewController!
+    open var currentStackVC: UIViewController!
     public var currentVCIndex: Int {
         return stackPageVC.index(of: currentStackVC)!
     }
-    public var datasource: EZSwipeControllerDataSource?
+    
+    open var datasource: EZSwipeControllerDataSource?
 
     public var navigationBarShouldBeOnBottom = false
     public var navigationBarShouldNotExist = false
     public var cancelStandardButtonEvents = false
 
-    public init() {
+    open init() {
         super.init(nibName: nil, bundle: nil)
         setupView()
     }
@@ -181,7 +182,7 @@ public class EZSwipeController: UIViewController {
         pageViewController.didMove(toParentViewController: self)
     }
 
-    public func setupView() {
+    open func setupView() {
 
     }
     
@@ -202,7 +203,7 @@ public class EZSwipeController: UIViewController {
         setupPageViewController()
     }
 
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
     }
 
