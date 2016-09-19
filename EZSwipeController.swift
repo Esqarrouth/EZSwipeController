@@ -19,7 +19,7 @@ import UIKit
     @objc optional func changedToPageIndex(_ index: Int)
 }
 
-public class EZSwipeController: UIViewController {
+open class EZSwipeController: UIViewController {
     
     public struct Constants {
         public static var Orientation: UIInterfaceOrientation {
@@ -181,7 +181,7 @@ public class EZSwipeController: UIViewController {
         pageViewController.didMove(toParentViewController: self)
     }
     
-    public func setupView() {
+    open func setupView() {
         
     }
     
@@ -189,7 +189,7 @@ public class EZSwipeController: UIViewController {
         pageViewController.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
     }
     
-    override public func loadView() {
+    override open func loadView() {
         super.loadView()
         stackVC = datasource?.viewControllerData()
         stackStartLocation = datasource?.indexOfStartingPage?() ?? 0
@@ -202,11 +202,11 @@ public class EZSwipeController: UIViewController {
         setupPageViewController()
     }
     
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    override public func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+    override open func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
         self.setFrameForCurrentOrientation()
     }
     
