@@ -17,6 +17,7 @@ import UIKit
     @objc optional func clickedLeftButtonFromPageIndex(_ index: Int)
     @objc optional func clickedRightButtonFromPageIndex(_ index: Int)
     @objc optional func changedToPageIndex(_ index: Int)
+    @objc optional func setupFinished()
 }
 
 open class EZSwipeController: UIViewController {
@@ -200,6 +201,8 @@ open class EZSwipeController: UIViewController {
         setupNavigationBar()
         setupViewControllers()
         setupPageViewController()
+        
+        datasource?.setupFinished?()
     }
     
     override open func viewDidLoad() {
