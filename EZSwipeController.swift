@@ -66,7 +66,7 @@ open class EZSwipeController: UIViewController {
     public var currentVCIndex: Int {
         return stackPageVC.index(of: currentStackVC)!
     }
-    public var datasource: EZSwipeControllerDataSource?
+    public weak var datasource: EZSwipeControllerDataSource?
     
     public var navigationBarShouldBeOnBottom = false
     public var navigationBarShouldNotExist = false
