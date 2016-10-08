@@ -364,7 +364,7 @@ self.currentVCIndex
 
 ##Requirements
 
-- Swift 2 or later 
+- Swift 3 or later 
 
 ##Possible features
 
