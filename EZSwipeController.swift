@@ -66,7 +66,7 @@ open class EZSwipeController: UIViewController {
         return stackPageVC.index(of: currentStackVC)!
     }
     
-    open var datasource: EZSwipeControllerDataSource?
+    open weak var datasource: EZSwipeControllerDataSource?
 
     public var navigationBarShouldBeOnBottom = false
     public var navigationBarShouldNotExist = false
@@ -250,7 +250,7 @@ open class EZSwipeController: UIViewController {
         pageViewController.setViewControllers([currentStackVC], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
     }
     
-    public func moveToPage(_ index: Int) {
+    public func moveToPage(_ index: Int, animated: Bool) {
         let currentIndex = stackPageVC.index(of: currentStackVC)!
         
         var direction: UIPageViewControllerNavigationDirection = .reverse
@@ -262,7 +262,7 @@ open class EZSwipeController: UIViewController {
         datasource?.changedToPageIndex?(index)
         currentStackVC = stackPageVC[index]
         
-        pageViewController.setViewControllers([currentStackVC], direction: direction, animated: true, completion: nil)
+        pageViewController.setViewControllers([currentStackVC], direction: direction, animated: animated, completion: nil)
     }
 }
 
