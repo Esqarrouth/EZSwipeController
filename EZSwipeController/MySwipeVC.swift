@@ -108,7 +108,7 @@ extension MySwipeVC: EZSwipeControllerDataSource {
     }
     
     func moveToEnd() {
-        self.moveToPage(2)
+        self.moveToPage(2, animated: true)
     }
     
     func alert(title: String?, message: String, action: String) {

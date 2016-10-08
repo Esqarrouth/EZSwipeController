@@ -72,7 +72,7 @@ open class EZSwipeController: UIViewController {
     public var navigationBarShouldNotExist = false
     public var cancelStandardButtonEvents = false
 
-    open init() {
+    public init() {
         super.init(nibName: nil, bundle: nil)
         setupView()
     }
@@ -190,7 +190,7 @@ open class EZSwipeController: UIViewController {
         pageViewController.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
     }
     
-    override public func loadView() {
+    override open func loadView() {
         super.loadView()
         stackVC = datasource?.viewControllerData()
         stackStartLocation = datasource?.indexOfStartingPage?() ?? 0
@@ -207,7 +207,7 @@ open class EZSwipeController: UIViewController {
         super.viewDidLoad()
     }
 
-    override public func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+    override open func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
         self.setFrameForCurrentOrientation()
     }
     
