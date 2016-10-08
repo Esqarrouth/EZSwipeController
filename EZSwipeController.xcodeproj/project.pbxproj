@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ABC17FBD1CAA4E9800141D78 /* EZSwipeController.h in Headers */ = {isa = PBXBuildFile; fileRef = ABC17FBC1CAA4E9800141D78 /* EZSwipeController.h */; };
+		AB5FFAB31D89EADA00A6855F /* EZSwipeController.h in Headers */ = {isa = PBXBuildFile; fileRef = ABC17FBC1CAA4E9800141D78 /* EZSwipeController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ABC17FC11CAAE7EF00141D78 /* EZSwipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A9D3D1BF7BB7200E52843 /* EZSwipeController.swift */; };
 		E11440AF1BF691CC000DDE45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11440AE1BF691CC000DDE45 /* AppDelegate.swift */; };
 		E11440B11BF691CC000DDE45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11440B01BF691CC000DDE45 /* ViewController.swift */; };
@@ -131,7 +131,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABC17FBD1CAA4E9800141D78 /* EZSwipeController.h in Headers */,
+				AB5FFAB31D89EADA00A6855F /* EZSwipeController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
