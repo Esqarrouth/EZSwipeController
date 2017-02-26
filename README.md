@@ -94,13 +94,13 @@ class MySwipeVC: EZSwipeController {
 extension MySwipeVC: EZSwipeControllerDataSource {
     func viewControllerData() -> [UIViewController] {
         let redVC = UIViewController()
-        redVC.view.backgroundColor = UIColor.redColor()
+        redVC.view.backgroundColor = UIColor.red
         
         let blueVC = UIViewController()
-        blueVC.view.backgroundColor = UIColor.blueColor()
+        blueVC.view.backgroundColor = UIColor.blue
         
         let greenVC = UIViewController()
-        greenVC.view.backgroundColor = UIColor.greenColor()
+        greenVC.view.backgroundColor = UIColor.green
         
         return [redVC, blueVC, greenVC]
     }
