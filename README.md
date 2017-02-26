@@ -69,8 +69,8 @@ Go to Targets -> Your Target -> General -> Main Interface -> Delete it
 Add this to your AppDelegate: 
 
 ``` swift
-func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    window = UIWindow(frame: UIScreen.mainScreen().bounds)
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    window = UIWindow(frame: UIScreen.main.bounds)
     window!.rootViewController = MySwipeVC()
     window!.makeKeyAndVisible()
     return true
