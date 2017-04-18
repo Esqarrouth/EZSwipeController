@@ -7,7 +7,7 @@ Easy to use UIPageViewController to create a view navigation like Snapchat/Tinde
 
 ![Demo](Examplepics/demo.gif)
 
-##Manual Install (~10 seconds)
+## Manual Install (~10 seconds)
 
 1. Download and drop 'EZSwipeController.swift' in your project.  
 2. Congratulations!
@@ -49,9 +49,9 @@ Run `carthage update`.
 $ carthage update
 ```
 
-##Setup
+## Setup
 
-####Use with Storyboard
+#### Use with Storyboard
 
 You can also use EZSwipeController via push or present on your UIViewcontrollers like: 
 
@@ -59,7 +59,7 @@ You can also use EZSwipeController via push or present on your UIViewcontrollers
 presentViewController(EZSwipeController(), animated: true, completion: nil)
 ```
 
-####Use without Storyboard
+#### Use without Storyboard
 If you want to use EZSwipe as root viewcontroller (Your apps starting point):
 
 Go to Targets -> Your Target -> General -> Main Interface -> Delete it
@@ -77,9 +77,9 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
 }
 ```
 
-##Usage
+## Usage
 
-####Create a subclass of EZSwipeController
+#### Create a subclass of EZSwipeController
 
 
 ``` swift
@@ -110,7 +110,7 @@ You should have something like this:
 
 <img src="Examplepics/first_run.gif" width="200">
 
-####Change Background Color
+#### Change Background Color
 
 ``` swift
 class MySwipeVC: EZSwipeController {
@@ -123,7 +123,7 @@ class MySwipeVC: EZSwipeController {
 
 <img src="Examplepics/background_color.gif" width="200">
 
-####Gives Titles To Pages
+#### Gives Titles To Pages
 
 ``` swift
 extension MySwipeVC: EZSwipeControllerDataSource {   
@@ -135,7 +135,7 @@ extension MySwipeVC: EZSwipeControllerDataSource {
 
 <img src="Examplepics/navbar_titles.gif" width="200">
 
-####Starting Page Index
+#### Starting Page Index
 
 ``` swift
 extension MySwipeVC: EZSwipeControllerDataSource {
@@ -145,7 +145,7 @@ extension MySwipeVC: EZSwipeControllerDataSource {
 }
 ```
 
-####On Changed Page Index
+#### On Changed Page Index
 
 ``` swift
 extension MySwipeVC: EZSwipeControllerDataSource {
@@ -156,7 +156,7 @@ extension MySwipeVC: EZSwipeControllerDataSource {
 }
 ```
 
-####Custom Navigation Bar
+#### Custom Navigation Bar
 
 Setting up navigationBarDataForPageIndex overrides effects in titlesForPages.
 
@@ -213,7 +213,7 @@ You don't need to set actions to buttons, EZSwipeController automatically overri
 
 <img src="Examplepics/navbar_custom.gif" width="200">
 
-####Add Images To Navigation Bar
+#### Add Images To Navigation Bar
 
 
 ``` swift
@@ -283,7 +283,7 @@ private func scaleTo(image image: UIImage, w: CGFloat, h: CGFloat) -> UIImage {
 
 <img src="Examplepics/navbar_image.gif" width="200">
 
-####Custom Button Settings
+#### Custom Button Settings
 
 Sometimes you may want to add your own actions to buttons, in that case you should disable the default button behaviour:
 
@@ -307,7 +307,7 @@ You can also add your analytics and other stuff in here.
 
 <img src="Examplepics/navbar_custom_button.gif" width="200">
 
-####Move Navigation Bar to Bottom
+#### Move Navigation Bar to Bottom
 
 ``` swift
 class MySwipeVC: EZSwipeController {
@@ -319,7 +319,7 @@ class MySwipeVC: EZSwipeController {
 }
 ```
 
-####Move To New Page
+#### Move To New Page
 
 ``` swift
 class MySwipeVC: EZSwipeController {
@@ -334,7 +334,7 @@ class MySwipeVC: EZSwipeController {
 
 <img src="Examplepics/navbar_bottom.gif" width="200">
 
-####Hide Navigation Bar
+#### Hide Navigation Bar
 
 ``` swift
 class MySwipeVC: EZSwipeController {
@@ -347,7 +347,7 @@ class MySwipeVC: EZSwipeController {
 
 <img src="Examplepics/no_navbar.gif" width="200">
 
-####Extra Settings
+#### Extra Settings
 
 ``` swift
 override func setupView() {
@@ -362,25 +362,25 @@ self.currentVCIndex
 //Use this to get the current page index
 ```
 
-##Requirements
+## Requirements
 
 - Swift 3 or later 
 - For Swift 2 support use any Version before 0.6
 
-##Possible features
+## Possible features
 
 - Better documentation with more fancy pictures!
 - Completing `TODO`s inside source files
 
-##Communication
+## Communication
 
 - If you **need help**, use [Stack Overflow](http://stackoverflow.com/questions/tagged/ezswipecontroller). (Tag 'ezswipecontroller')
 - If you **found a bug**, open an issue.
 - If you **have a feature request**, open an issue.
 - If you **want to contribute**, submit a pull request.
 
-##License
+## License
 EZSwipeController is available under the MIT license. See the [LICENSE file](https://github.com/goktugyil/EZSwipeController/blob/master/LICENSE).
 
-##Keywords
+## Keywords
 swift, extension, pageviewcontroller, uipageviewcontroller, tinder, snapchat, navigation
