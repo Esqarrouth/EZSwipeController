@@ -37,6 +37,20 @@ extension MySwipeVC: EZSwipeControllerDataSource {
         testButton.backgroundColor = UIColor.green
         testButton.addTarget(self, action: #selector(MySwipeVC.moveToEnd), for: UIControlEvents.touchUpInside)
         redVC.view.addSubview(testButton)
+      
+        let label = UILabel()
+        label.text = "Test view bottom"
+        label.sizeToFit()
+        label.center = CGPoint(
+          x: redVC.view.bounds.width / 2,
+          y: redVC.view.bounds.height - label.frame.size.height
+        )
+        label.autoresizingMask = [
+          .flexibleTopMargin,
+          .flexibleLeftMargin,
+          .flexibleRightMargin
+        ]
+        redVC.view.addSubview(label)
         
         let blueVC = UIViewController()
         blueVC.view.backgroundColor = UIColor.blue

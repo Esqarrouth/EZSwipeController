@@ -145,8 +145,14 @@ open class EZSwipeController: UIViewController {
         stackPageVC = [UIViewController]()
         stackVC.enumerated().forEach { index, viewController in
             let pageViewController = UIViewController()
+            viewController.view.frame = pageViewController.view.bounds
+            viewController.view.autoresizingMask = [
+                .flexibleWidth,
+                .flexibleHeight
+            ]
             if !navigationBarShouldBeOnBottom && !navigationBarShouldNotExist {
                 viewController.view.frame.origin.y += Constants.navigationBarHeight
+                viewController.view.frame.size.height -= Constants.navigationBarHeight
             }
             pageViewController.addChildViewController(viewController)
             pageViewController.view.addSubview(viewController.view)
