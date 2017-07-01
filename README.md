@@ -69,8 +69,8 @@ Go to Targets -> Your Target -> General -> Main Interface -> Delete it
 Add this to your AppDelegate: 
 
 ``` swift
-func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    window = UIWindow(frame: UIScreen.mainScreen().bounds)
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    window = UIWindow(frame: UIScreen.main.bounds)
     window!.rootViewController = MySwipeVC()
     window!.makeKeyAndVisible()
     return true
@@ -94,13 +94,13 @@ class MySwipeVC: EZSwipeController {
 extension MySwipeVC: EZSwipeControllerDataSource {
     func viewControllerData() -> [UIViewController] {
         let redVC = UIViewController()
-        redVC.view.backgroundColor = UIColor.redColor()
+        redVC.view.backgroundColor = UIColor.red
         
         let blueVC = UIViewController()
-        blueVC.view.backgroundColor = UIColor.blueColor()
+        blueVC.view.backgroundColor = UIColor.blue
         
         let greenVC = UIViewController()
-        greenVC.view.backgroundColor = UIColor.greenColor()
+        greenVC.view.backgroundColor = UIColor.green
         
         return [redVC, blueVC, greenVC]
     }
