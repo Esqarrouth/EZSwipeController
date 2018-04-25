@@ -3,6 +3,12 @@
 [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/EZSwipeController.svg)](https://img.shields.io/cocoapods/v/EZSwipeController.svg)  
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
+<p>
+<a href="http://cocoapods.org/pods/EZSwipeController"><img src="https://img.shields.io/cocoapods/at/EZSwipeController.svg?label=Apps%20Using%20EZSwipeController&colorB=28B9FE"></a>
+<a href="http://cocoapods.org/pods/EZSwipeController"><img src="https://img.shields.io/cocoapods/dt/EZSwipeController.svg?label=Total%20Downloads&colorB=28B9FE"></a>
+<a href="http://cocoapods.org/pods/EZSwipeController"><img src="https://img.shields.io/cocoapods/dm/EZSwipeController.svg?label=Downloads&colorB=28B9FE"></a>
+</p>
+
 Easy to use UIPageViewController to create a view navigation like Snapchat/Tinder/iOS Main Pages.
 
 ![Demo](Examplepics/demo.gif)
