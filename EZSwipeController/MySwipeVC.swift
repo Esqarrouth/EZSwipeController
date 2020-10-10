@@ -31,11 +31,11 @@ extension MySwipeVC: EZSwipeControllerDataSource {
         redVC.view.addSubview(char)
         
         let testButton = UIButton(frame: CGRect(x: 250, y: 30, width: 100, height: 100))
-        testButton.setTitle("Click for last page", for: UIControlState())
-        testButton.setTitleColor(UIColor.red, for: UIControlState())
+        testButton.setTitle("Click for last page", for: UIControl.State())
+        testButton.setTitleColor(UIColor.red, for: UIControl.State())
         testButton.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
         testButton.backgroundColor = UIColor.green
-        testButton.addTarget(self, action: #selector(MySwipeVC.moveToEnd), for: UIControlEvents.touchUpInside)
+        testButton.addTarget(self, action: #selector(MySwipeVC.moveToEnd), for: UIControl.Event.touchUpInside)
         redVC.view.addSubview(testButton)
       
         let label = UILabel()
@@ -78,7 +78,7 @@ extension MySwipeVC: EZSwipeControllerDataSource {
         let navigationBar = UINavigationBar()
         navigationBar.barStyle = UIBarStyle.default
         navigationBar.barTintColor = UIColor(red: 231/255, green: 231/255, blue: 231/255, alpha: 1)
-        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.black]
+        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
         
         let navigationItem = UINavigationItem(title: title)
         navigationItem.hidesBackButton = true
@@ -121,7 +121,7 @@ extension MySwipeVC: EZSwipeControllerDataSource {
         print("Page has changed to: \(index)")
     }
     
-    func moveToEnd() {
+    @objc func moveToEnd() {
         self.moveToPage(2, animated: true)
     }
     
